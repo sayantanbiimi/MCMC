@@ -1,4 +1,4 @@
-# Metropolis–Hastings Laboratory
+# Metropolis–Hastings Sampler demo
 
 An interactive Shiny app for demonstrating both general and random-walk
 Metropolis–Hastings.
