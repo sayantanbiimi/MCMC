@@ -27,7 +27,7 @@ jobs:
           shinylive::export(
             "apps/Metropolis-Hastings",
             "site",
-            subdir = "metropolis-hastings"
+            subdir = "Metropolis-Hastings"
           )
 
       - name: Upload website
