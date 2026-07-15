@@ -3,13 +3,6 @@
 An interactive Shiny app for demonstrating both general and random-walk
 Metropolis–Hastings.
 
-## Run locally
-
-```r
-install.packages("shiny")
-shiny::runApp("metropolis-hastings-lab")
-```
-
 The app uses only `shiny` and base R, making it suitable for Shinylive and
 GitHub Pages. It includes four targets:
 
@@ -26,7 +19,7 @@ proposal-density ratio cannot generally be discarded.
 Diagnostics include trace plots, acceptance rate, autocorrelation functions,
 effective sample size, retained-sample plots, and running summaries.
 
-## Suggested classroom sequence
+## Classwork
 
 1. For the standard normal target, compare proposal SDs 0.1, 1, and 6.
 2. Explain why the chain with SD 0.1 accepts often but has low ESS.
