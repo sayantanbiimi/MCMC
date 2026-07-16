@@ -29,6 +29,12 @@ jobs:
             "site",
             subdir = "Metropolis-Hastings"
           )
+          shinylive::export(
+            "apps/Gibbs-sampling",
+            "site",
+            subdir = "gibbs-sampling"
+          )
+          
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
