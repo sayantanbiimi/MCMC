@@ -1,5 +1,5 @@
 # Metropolis–Hastings Sampler demo 
-Deployed at: https://sayantanbiimi.github.io/MCMC/metropolis-hastings/
+Deployed at: https://sayantanbiimi.github.io/MCMC/Metropolis-Hastings/
 
 An interactive Shiny app for demonstrating both general and random-walk
 Metropolis–Hastings.
