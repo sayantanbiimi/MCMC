@@ -1,0 +1,59 @@
+name: Deploy MCMC apps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install Shinylive
+        shell: Rscript {0}
+        run: |
+          install.packages("shinylive")
+
+      - name: Export applications
+        shell: Rscript {0}
+        run: |
+          shinylive::export(
+            "apps/Metropolis-Hastings",
+            "site",
+            subdir = "Metropolis-Hastings"
+          )
+          shinylive::export(
+            "apps/Gibbs-sampling",
+            "site",
+            subdir = "gibbs-sampling"
+          )
+          
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
